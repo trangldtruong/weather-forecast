@@ -1,3 +1,6 @@
 * {
     box-sizing: border-box;
 }
+.forecast {
+    border: black solid 1px;
+}
