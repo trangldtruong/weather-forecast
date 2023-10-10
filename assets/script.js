@@ -7,7 +7,7 @@ var formSubmitHandler = function (event) {
 }
 //function to find latitude and longitude 
 var getCoord = function (city) {
-fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit={limit}&appid=${apiKey}`)
+fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`)
   .then(function (response) {
     if (response.ok) {
         console.log(response)
