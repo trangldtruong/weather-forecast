@@ -2,8 +2,6 @@ var buttonEl = document.querySelector('#search-button')
 var apiKey = "fdc35111e213fb02c228dce2699bda6b"
 var userInput = document.querySelector('#user-input')
 var city = userInput.textContent
-//var lat = coord.lat
-//var lon = coord.lon
 var formSubmitHandler = function (event) {
     event.preventDefault();
 }
@@ -15,7 +13,6 @@ fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`)
         console.log(response)
         response.json().then(function (data) {
             console.log(data);
-            //coord = data[0]
             currentWeather(data[0].lat, data[0].lon, city);
             forecastWeather(data[0].lat, data[0].lon);
 
@@ -55,7 +52,6 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&un
     return res.json();
 })
 .then(function(forecastData){
-    //console.log("Forecast Data: "+JSON.stringify(forecastData));
     for(var i=0; i<forecastData.list.length;i++){
         if(forecastData.list[i].dt_txt.split(" ")[1] === "03:00:00"){
             console.log("test");
@@ -67,7 +63,7 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&un
 })
 //function to display current weather 
 var currentTemperature = document.querySelector('#current-temperature')
-//currentTemperature = main.temp
+//function to clear current weather 
 }
 //function to display forecast 
 var renderCoord = buttonEl.addEventListener('click', function(){
