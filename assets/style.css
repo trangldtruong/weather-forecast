@@ -1,6 +1,24 @@
 * {
     box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .forecast {
     border: black solid 1px;
+}
+h1 {
+    color: blue;
+}
+/*main {
+    display: flex;
+    flex-direction: row;
+}*/
+
+#search-button {
+    border-radius: 2px;
+    font-size: 15px;
+    
+
+}
+.five-day-forecast {
+
 }

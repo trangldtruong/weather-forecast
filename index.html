@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Weather Forecast</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style.css">
-    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    
 </head>
 <body>
     <header>
         <h1>Weather Dashboard</h1>
 
     </header>
-    <main>
-        <div>
+    <main class="container">
+        <div class="row">
+        <div class="col-md-4">
             <h2>Search for a city</h2>
             <input id="user-input" placeholder="San Diego">
             <button id="search-button">Search</button>
         </div>
-        <div class="current-weather">
-        <h2 class="city-name"></h2>
-        <p id="current-temperature"></p>
-        <p id="current-wind"></p>
-        <p id="current-humidity"></p>
+        <div id="current-weather" class="col-md-8"></div>
         </div>
-        <div class="five-day-forecast">
+        <div id="five-day-forecast" class="row">
             <h3>5-Day Forecast</h3>
-            <div class="forecast" id="day-1">
+            <!-- <div class="forecast" id="day-1">
                 <h4 class="first-day">10/04/2023</h4>
                 <p>Temp: </p>
                 <p>Wind: </p>
@@ -54,16 +53,12 @@
                 <p>Temp: </p>
                 <p>Wind: </p>
                 <p>Humidity: </p>
-            </div>
-
-
-
-
-
+            </div> -->
         </div>
 
     </main>
- 
-<script src="/assets/script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./assets/script.js"></script>
 </body>
 </html>
