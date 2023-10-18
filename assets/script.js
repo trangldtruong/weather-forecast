@@ -55,40 +55,34 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&un
     for(var i=0; i<forecastData.list.length; i++){
         if(forecastData.list[i].dt_txt.split(" ")[1] === "03:00:00"){
             console.log(forecastData);
-            let 
-            $('#five-day-forecast').append(div)
-            //create a div and assign class "col-md-2" and then append it to the #five-day-forecast div
-            // create <p> for temp, humidity and wind
-            //append them to col-md-2 div
-           /* let date = $("<p>")
-           date.text("Date: " +data.list.dt_txt )
+            let forecast = $("<div>")
+           
+           let date = $("<p>")
+           date.text("Date and Time: " +forecastData.list[i].dt_txt )
            let temp = $("<p>");
-            temp.text("Temp: "+data.main.temp);
+            temp.text("Temp: "+forecastData.list[i].main.temp);
 
             let humidity = $("<p>");
-            humidity.text("Humidity: "+data.main.humidity);
+            humidity.text("Humidity: "+forecastData.list[i].main.humidity);
 
             let wind = $("<p>");
-            wind.text("Wind: "+data.wind.speed);
+            wind.text("Wind: "+forecastData.list[i].wind.speed);
 
-            $(".col-md-2").append(h2, temp, humidity, wind)*/
+            forecast.append(date, temp, humidity, wind)
+            $("#five-day-forecast").append(forecast)
         }
     }
 })
-
-//function to clear current weather 
 }
 
 //function to store data
-function displayHistory() {
-    var history = localStorage.getItem("history")
-    localStorage.setItem('history', input.value)
-    displayHistory();
-    document.querySelector('.history').innerHTML = history;
-
+function saveHistory(city) {
+    localStorage.setItem("history", city)
 }
-//event listener
+
+//even t listener
 var renderCoord = buttonEl.addEventListener('click', function(){
     var city = document.getElementById("user-input").value;
     getCoord(city);
-})
+    saveHistory(city);
+});

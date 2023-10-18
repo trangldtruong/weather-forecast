@@ -7,9 +7,7 @@ This application provides information on weather of a certain city for the curre
 Users can enter city name at input and click on search button. Weather information on wind, temperature and humidity will be displayed. Also, 5 days weather forecast of the city will be displayed below the current weather. Search history will be stored in LocalStorage. 
 
 ## Visual
-A screenshot of the application can be found below 
-<img>
-
+A screenshot of the application can be found here <img src="./assets/Screenshot 2023-10-17 232705.png" alt="weather forecast website mainpage" title="Weather forecast">
 ## License
 MIT
 
