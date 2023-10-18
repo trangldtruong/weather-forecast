@@ -52,13 +52,17 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&un
     return res.json();
 })
 .then(function(forecastData){
-    for(var i=0; i<forecastData.list.length;i++){
+    for(var i=0; i<forecastData.list.length; i++){
         if(forecastData.list[i].dt_txt.split(" ")[1] === "03:00:00"){
             console.log(forecastData);
+            let 
+            $('#five-day-forecast').append(div)
             //create a div and assign class "col-md-2" and then append it to the #five-day-forecast div
             // create <p> for temp, humidity and wind
             //append them to col-md-2 div
-            let temp = $("<p>");
+           /* let date = $("<p>")
+           date.text("Date: " +data.list.dt_txt )
+           let temp = $("<p>");
             temp.text("Temp: "+data.main.temp);
 
             let humidity = $("<p>");
@@ -67,12 +71,21 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&un
             let wind = $("<p>");
             wind.text("Wind: "+data.wind.speed);
 
-            $("#five-day-forecast").append(h2, temp, humidity, wind)
+            $(".col-md-2").append(h2, temp, humidity, wind)*/
         }
     }
 })
 
 //function to clear current weather 
+}
+
+//function to store data
+function displayHistory() {
+    var history = localStorage.getItem("history")
+    localStorage.setItem('history', input.value)
+    displayHistory();
+    document.querySelector('.history').innerHTML = history;
+
 }
 //event listener
 var renderCoord = buttonEl.addEventListener('click', function(){
